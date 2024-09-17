@@ -38,7 +38,7 @@ interface EditSpeciesDialogProps {
 }
 
 export default function EditSpeciesDialog({ species }: EditSpeciesDialogProps) {
-  const [open, setOpen] = useState(false); // Use local state for open/close
+  const [open, setOpen] = useState(false);
 
   const {
     register,
@@ -68,13 +68,13 @@ export default function EditSpeciesDialog({ species }: EditSpeciesDialogProps) {
         title: "Species Updated",
         description: `${data.scientific_name} has been updated successfully.`,
       });
-      setOpen(false); // Close the dialog after successful submission
+      setOpen(false);
     }
   };
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Edit Species</Button> {/* Button to open the dialog */}
+      <Button onClick={() => setOpen(true)}>Edit Species</Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-screen overflow-y-auto sm:max-w-[600px]">
           <DialogHeader>
